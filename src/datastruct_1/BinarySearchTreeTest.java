@@ -35,7 +35,7 @@ class BinarySearchTree {
 		int result;
 		while (T != null) {
 			if ((result = x.compareTo(T.key)) < 0) {//왼쪽으로 가라
-				//채워라
+				T=T.left;
 			} else if (result == 0) { //찾았음
 				return T;
 			} else { // 오른쪽으로 가라.
@@ -50,6 +50,7 @@ class BinarySearchTree {
 		if (N != null) {
 			System.out.print("(");
 			printNode(N.left);
+			System.out.print(N.key);
 			//중위순회방식으로 출력, 이 부분을 채워라
 			printNode(N.right);
 			System.out.print(")");
@@ -88,10 +89,28 @@ class BinarySearchTree {
 
 		if (p.left == null && p.right == null) { // 자식이 없는 노드
 			//채워라
+			if(parent.left==p) {
+				parent.left=null;
+			}else {
+				parent.right=null;
+			}
 		}
 
 		else if (p.left == null || p.right == null) { // 자식이 하나 있을때
 			//채워라 
+			if(p.left!=null) {
+				if(parent.left==p) {
+					parent.left=p.left;
+				}else {
+					parent.right = p.left;
+				}
+			}else {
+				if(parent.left==p) {
+					parent.left=p.right;
+				}else {
+					parent.right=p.right;
+				}
+			}
 		}
 		else if (p.left != null && p.right != null) {// 자식이 둘 다 있을 때
 			q = maxNode(p.left);
@@ -119,7 +138,7 @@ class BinarySearchTree {
 	
 }// BinarySearchTree 끝
 
-public class BSTsample {
+public class BinarySearchTreeTest {
 
 	public static void main(String[] args) {
 		BinarySearchTree T = new BinarySearchTree();
@@ -164,7 +183,11 @@ public class BSTsample {
 			System.out.println("찾으시는 값 " + key + "를 탐색실패함.");
 		}
 		System.out.println();
+		System.out.println("이트리는");
+		T.printBST();
+		System.out.println("의 값을 가지고 있습니다.");
 		
 		
 	}// 메인 끝
 }// BinarySearchTreeTest 끝
+
