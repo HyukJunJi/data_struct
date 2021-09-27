@@ -1,4 +1,5 @@
 package datastruct_1;
+
 class TreeNode {
 	String key;
 	TreeNode left;
@@ -118,7 +119,7 @@ class BinarySearchTree {
 	
 }// BinarySearchTree 끝
 
-public class BinarySearchTreeTest {
+public class BSTsample {
 
 	public static void main(String[] args) {
 		BinarySearchTree T = new BinarySearchTree();
@@ -167,4 +168,3 @@ public class BinarySearchTreeTest {
 		
 	}// 메인 끝
 }// BinarySearchTreeTest 끝
-
