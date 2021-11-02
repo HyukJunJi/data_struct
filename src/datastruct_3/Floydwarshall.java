@@ -31,13 +31,13 @@ public class Floydwarshall {
 		
 		int INF=99;
 		int graph[][]= {
-				{0,3,8,INF,-4},
-				{INF,0,INF,1,7},
-				{INF,4,0,INF,INF},
-				{2,INF,-5,0,INF},
-				{INF,INF,INF,6,0}
+				{0,2,9,INF},
+				{5,0,4,3},
+				{-1,INF,0,4},
+				{INF,1,7,0}
+				
 		};
-		int V=5;
+		int V=4;
 		AllshortestPath a=new AllshortestPath();
 		a.floydWarshall(graph,V);
 	}
