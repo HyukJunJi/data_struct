@@ -24,7 +24,7 @@ class Sorting{
 		else {
 			System.out.println("Wrong");
 		}
-		
+
 		long startTime=System.currentTimeMillis();
 		for(int i=0;i<arr.length-1;i++) {
 			int min_idx=i;
@@ -42,6 +42,7 @@ class Sorting{
 		long endTime=System.currentTimeMillis();
 		long timeDiff=endTime-startTime;
 		System.out.println(type+" selectionSort = "+timeDiff+"밀리초");
+		randomArr();
 	}
 	public void insertionSort(String type) {
 		if(type.equals("Random")) {
@@ -68,6 +69,7 @@ class Sorting{
 		long endTime=System.currentTimeMillis();
 		long timeDiff=endTime-startTime;
 		System.out.println(type+" insertionSort = "+timeDiff+"밀리초");
+		randomArr();
 	}
 	public void bubleSort(String type) {
 		if(type.equals("Random")) {
@@ -93,6 +95,7 @@ class Sorting{
 		long endTime=System.currentTimeMillis();
 		long timeDiff=endTime-startTime;
 		System.out.println(type+" bubleSort = "+timeDiff+"밀리초");
+		randomArr();
 	}
 	public void flagbubleSort(String type) {
 		if(type.equals("Random")) {
@@ -127,6 +130,7 @@ class Sorting{
 		long endTime=System.currentTimeMillis();
 		long timeDiff=endTime-startTime;
 		System.out.println(type+" flagbubleSort = "+timeDiff+"밀리초");
+		randomArr();
 	}
 	public void randomArr() {
 		arr=new Integer[num];
@@ -146,7 +150,6 @@ class Sorting{
 public class Sortmain {
 	public static void main(String[] args) {
 
-		System.out.println("hello");
 		Sorting s=new Sorting(10000);
 		s.bubleSort("Random");
 		s.bubleSort("Up");
